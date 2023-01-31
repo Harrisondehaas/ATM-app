@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device=width, initial-scale=1" />
+    <title>Harrison's ATM Machine</title>
+
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+  </head>
+  <body>
+    <h1>Money O'Clock</h1>
+    <div class="ATM"></div>
+    <div class="content"></div>
+    <script>
+      let hundreds = 100;
+      let fifties = 50;
+      let twenties = 20;
+      let tens = 10;
+      let fives = 5;
+
+      let Amount = parseInt(
+        window.prompt("How much would you like to withdrawl")
+      );
+
+      let bills1 = Math.floor(Amount / hundreds);
+      Amount = Amount % hundreds;
+      let bills2 = Math.floor(Amount / fifties);
+      Amount = Amount % fifties;
+      let bills3 = Math.floor(Amount / twenties);
+      Amount = Amount % twenties;
+      let bills4 = Math.floor(Amount / tens);
+      Amount = Amount % tens;
+      let bills5 = Math.floor(Amount / fives);
+      Amount = Amount % fives;
+
+      console.log("User entered: ", Amount);
+
+      console.log(Amount);
+
+      document.write(`<p><label>100's:&nbsp;</label>${bills1}</p>
+                  <p><label>50's:&nbsp;</label>${bills2}</p>
+                  <p><label>20's:&nbsp;</label>${bills3}</p>
+                  <p><label>10's:&nbsp;</label>${bills4}</p>
+                  <p><label>5's:&nbsp;</label>${bills5}</p>`);
+    </script>
+    <button type="submit" onclick="location.reload()">Clear</button>
+  </body>
+</html>
